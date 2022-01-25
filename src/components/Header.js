@@ -2,11 +2,15 @@ import React from "react";
 import PropTypes from "prop-types";
 import Button from "./Button";
 
-export const Header = ({ title }) => {
+export const Header = ({ title, onAdd, showAdd }) => {
   return (
     <header className="header">
       <h1>{title}</h1>
-      <Button color="green" text="ADD" />
+      <Button
+        color={showAdd ? "red" : "green"}
+        text={showAdd ? "Zamknij" : "Dodaj"}
+        onClick={onAdd}
+      />
     </header>
   );
 };

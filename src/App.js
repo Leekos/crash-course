@@ -4,7 +4,7 @@ import Tasks from "./components/Tasks";
 import { useState } from "react";
 
 const App = () => {
-  const [tasks, setTask] = useState([
+  const [tasks, setTasks] = useState([
     {
       id: 1,
       text: "Wizyta u Lekarza",
@@ -29,7 +29,7 @@ const App = () => {
 
   //usuwanie zadań
   const deleteTask = (id) => {
-    console.log("delete", id);
+    setTasks(tasks.filter((task) => task.id !== id));
   };
   return (
     <div className="container">
